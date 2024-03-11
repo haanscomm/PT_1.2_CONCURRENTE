@@ -3,10 +3,13 @@
 #include <lista.h>
 
 // Crea una lista con un nodo.
-void crear(TLista *pLista, int valor)
+void crear(TLista *pLista, char *valor)
 {
   pLista->pPrimero = malloc(sizeof(TNodo)); // memoria del tamaño de una caja (crea un pPrimero a una zona de memoria que tiene este tamaño, pPrimero apunta a ese espacio)
-  pLista->pPrimero->valor = valor;          // el valor asigna el valor introducido por parametro (valor, en este caso 7)
+  char *pValor = malloc(strlen(valor)*sizeof(char));
+  strcpy(pValor, valor);
+ 
+  pLista->pPrimero->valor = pValor;         
   pLista->pPrimero->pSiguiente = NULL;
 }
 
@@ -26,12 +29,18 @@ void destruir(TLista *pLista)
 }
 
 // Inserta al ppio de la lista.
-void insertar(TLista *pLista, int valor)
+void insertar(TLista *pLista, char *valor)
 {
   TNodo *pAux;
   pAux = malloc(sizeof(TNodo));
 
-  pAux->valor = pLista->pPrimero->valor;           // Apunta al valor guardado en pPrimero
+  char *pValor = malloc(strlen(valor)*sizeof(char));
+  
+
+  pAux->valor = pValor; 
+  strcpy(pValor, valor);
+
+  //pAux->valor = pLista->pPrimero->valor;           // Apunta al valor guardado en pPrimero
   pAux->pSiguiente = pLista->pPrimero->pSiguiente; // Apunta a pSiguiente de pPrimero
 
   pLista->pPrimero->valor = valor;
