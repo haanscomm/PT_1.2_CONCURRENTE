@@ -227,10 +227,10 @@ void imprimir(TLista *pLista)
 {
   TNodo *pAux = pLista->pPrimero;
 
-  printf("Lista: ");
+  printf("Lista: \n");
   while (pAux != NULL)
   {
-    printf("%s", pAux->valor);
+    printf("%s \n ", pAux->valor);
     pAux = pAux->pSiguiente;
   }
   printf("\n");
