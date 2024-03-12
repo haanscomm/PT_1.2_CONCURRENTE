@@ -44,7 +44,7 @@ void insertar(TLista *pLista, char *valor)
   pLista->pPrimero->pSiguiente = pAux;
 }
 
-void insertarFinal(TLista *pLista, int valor)
+void insertarFinal(TLista *pLista, char *valor)
 {
   TNodo *pAux;
   TNodo *pAux1 = NULL;
