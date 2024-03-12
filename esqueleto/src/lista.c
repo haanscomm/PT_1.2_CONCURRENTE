@@ -49,10 +49,13 @@ void insertarFinal(TLista *pLista, int valor)
   TNodo *pAux;
   TNodo *pAux1 = NULL;
 
+  char *pValor = malloc(strlen(valor) * sizeof(char));
+  strcpy(pValor, valor);
+
   if (pLista->pPrimero == NULL)
   {
     pLista->pPrimero = malloc(sizeof(TNodo));
-    pLista->pPrimero->valor = valor;
+    pLista->pPrimero->valor = pValor;
     pLista->pPrimero->pSiguiente = NULL;
   }
   pAux = pLista->pPrimero;
@@ -64,7 +67,7 @@ void insertarFinal(TLista *pLista, int valor)
   }
 
   pAux = malloc(sizeof(TNodo));
-  pAux->valor = valor;
+  pAux->valor = pValor;
   pAux1->pSiguiente = pAux;
 }
 
