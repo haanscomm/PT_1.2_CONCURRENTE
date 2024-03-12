@@ -6,11 +6,11 @@
 void crear(TLista *pLista, char *valor)
 {
   pLista->pPrimero = malloc(sizeof(TNodo)); // memoria del tamaño de una caja (crea un pPrimero a una zona de memoria que tiene este tamaño, pPrimero apunta a ese espacio)
-  char *pValor = malloc(strlen(valor)*sizeof(char));
+  char *pValor = malloc(strlen(valor) * sizeof(char));
   strcpy(pValor, valor);
- 
-  pLista->pPrimero->valor = pValor;         
-  pLista->pPrimero->pSiguiente = NULL; 
+
+  pLista->pPrimero->valor = pValor;
+  pLista->pPrimero->pSiguiente = NULL;
 }
 
 void destruir(TLista *pLista)
@@ -72,9 +72,61 @@ void insertarFinal(TLista *pLista, char *valor)
 }
 
 // Suponemos n = 1, 2, ...
-void insertarN(TLista *pLista, int index, int valor)
+void insertarN(TLista *pLista, int index, char *valor)
 {
- 
+
+  char *pValor = malloc(strlen(valor) * sizeof(char));
+  strcpy(pValor, valor);
+
+  if (index < 0)
+  {
+    printf("No existe este índice.\n");
+    return;
+  }
+
+  TNodo *pAux1;
+  pAux1 = malloc(sizeof(TNodo));
+
+  if (pAux1 == NULL)
+  {
+    printf("Error: No se pudo asignar memoria.\n");
+    return;
+  }
+
+  pAux1->valor = pValor;
+
+  // Caso especial: si el índice es cero, el nuevo nodo será el nuevo primer nodo
+  if (index == 0)
+  {
+    pAux1->pSiguiente = pLista->pPrimero;
+    pLista->pPrimero = pAux1;
+    return;
+  }
+
+  // Apuntadores auxiliares para recorrer la lista
+  TNodo *pAux2 = pLista->pPrimero; // puntero actual
+  TNodo *pAux3 = NULL;             // puntero anterior
+  int contador = 0;
+
+  // Recorremos la lista hasta el nodo en la posición index o hasta el final si index es mayor al tamaño de la lista
+  while (pAux2 != NULL && contador < index)
+  {
+    pAux3 = pAux2;
+    pAux2 = pAux2->pSiguiente;
+    contador++;
+  }
+
+  // Si index excede el tamaño de la lista, mostramos un mensaje de error
+  if (contador < index)
+  {
+    printf("No existe este índice.\n");
+    free(pAux1);
+    return;
+  }
+
+  // Insertamos el nuevo nodo entre el puntero anterior y el actual
+  pAux1->pSiguiente = pAux2;
+  pAux3->pSiguiente = pAux1;
 }
 
 // Elimina el primer elemento de la lista.
