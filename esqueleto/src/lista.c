@@ -35,15 +35,13 @@ void insertar(TLista *pLista, char *valor)
   pAux = malloc(sizeof(TNodo));
 
   char *pValor = malloc(strlen(valor)*sizeof(char));
-  
-
-  pAux->valor = pValor; 
   strcpy(pValor, valor);
 
-  //pAux->valor = pLista->pPrimero->valor;           // Apunta al valor guardado en pPrimero
-  pAux->pSiguiente = pLista->pPrimero->pSiguiente; // Apunta a pSiguiente de pPrimero
+  pAux->valor = pLista->pPrimero->valor; 
+  pAux->pSiguiente = pLista->pPrimero->pSiguiente; 
 
-  pLista->pPrimero->valor = valor;
+
+  pLista->pPrimero->valor = pValor;
   pLista->pPrimero->pSiguiente = pAux;
 }
 
