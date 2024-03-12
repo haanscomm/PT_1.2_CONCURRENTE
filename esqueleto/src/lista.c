@@ -6,12 +6,11 @@
 void crear(TLista *pLista, char *valor)
 {
   pLista->pPrimero = malloc(sizeof(TNodo)); // memoria del tamaño de una caja (crea un pPrimero a una zona de memoria que tiene este tamaño, pPrimero apunta a ese espacio)
-  char *pValor = malloc(strlen(valor)*sizeof(char));
+  char *pValor = malloc(strlen(valor) * sizeof(char));
   strcpy(pValor, valor);
- 
-  pLista->pPrimero->valor = pValor;         
-  pLista->pPrimero->pSiguiente = NULL; 
-  
+
+  pLista->pPrimero->valor = pValor;
+  pLista->pPrimero->pSiguiente = NULL;
 }
 
 void destruir(TLista *pLista)
@@ -35,28 +34,28 @@ void insertar(TLista *pLista, char *valor)
   TNodo *pAux;
   pAux = malloc(sizeof(TNodo));
 
-  char *pValor = malloc(strlen(valor)*sizeof(char));
-  
-
-  pAux->valor = pValor; 
+  char *pValor = malloc(strlen(valor) * sizeof(char));
   strcpy(pValor, valor);
 
-  //pAux->valor = pLista->pPrimero->valor;           // Apunta al valor guardado en pPrimero
-  pAux->pSiguiente = pLista->pPrimero->pSiguiente; // Apunta a pSiguiente de pPrimero
+  pAux->valor = pLista->pPrimero->valor;
+  pAux->pSiguiente = pLista->pPrimero->pSiguiente;
 
-  pLista->pPrimero->valor = valor;
+  pLista->pPrimero->valor = pValor;
   pLista->pPrimero->pSiguiente = pAux;
 }
 
-void insertarFinal(TLista *pLista, int valor)
+void insertarFinal(TLista *pLista, char *valor)
 {
   TNodo *pAux;
   TNodo *pAux1 = NULL;
 
+  char *pValor = malloc(strlen(valor) * sizeof(char));
+  strcpy(pValor, valor);
+
   if (pLista->pPrimero == NULL)
   {
     pLista->pPrimero = malloc(sizeof(TNodo));
-    pLista->pPrimero->valor = valor;
+    pLista->pPrimero->valor = pValor;
     pLista->pPrimero->pSiguiente = NULL;
   }
   pAux = pLista->pPrimero;
@@ -68,7 +67,7 @@ void insertarFinal(TLista *pLista, int valor)
   }
 
   pAux = malloc(sizeof(TNodo));
-  pAux->valor = valor;
+  pAux->valor = pValor;
   pAux1->pSiguiente = pAux;
 }
 
@@ -206,7 +205,7 @@ int getElementoN(TLista *pLista, int index)
   while (pAux != NULL && contador < index)
   {
     pAux = pAux->pSiguiente;
-    
+
     contador++;
   }
 
