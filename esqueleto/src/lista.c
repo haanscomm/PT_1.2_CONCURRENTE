@@ -10,7 +10,8 @@ void crear(TLista *pLista, char *valor)
   strcpy(pValor, valor);
  
   pLista->pPrimero->valor = pValor;         
-  pLista->pPrimero->pSiguiente = NULL;
+  pLista->pPrimero->pSiguiente = NULL; 
+  
 }
 
 void destruir(TLista *pLista)
