@@ -191,7 +191,7 @@ void eliminarN(TLista *pLista, int index)
   }
 }
 
-int getElementoN(TLista *pLista, int index)
+char *getElementoN(TLista *pLista, int index)
 {
 
   // Creamos un nodo auxiliar que recorre la lista
@@ -202,7 +202,7 @@ int getElementoN(TLista *pLista, int index)
   if (index < 0)
   {
     printf("No existe este índice.\n");
-    return -1;
+    return NULL;
   }
 
   // Recorremos la lista
@@ -217,7 +217,7 @@ int getElementoN(TLista *pLista, int index)
   if (contador < index)
   {
     printf("no existe este índice.\n");
-    return -1;
+    return NULL;
   }
 
   return pAux->valor;
@@ -230,7 +230,7 @@ void imprimir(TLista *pLista)
   printf("Lista: ");
   while (pAux != NULL)
   {
-    printf("%d", pAux->valor);
+    printf("%s", pAux->valor);
     pAux = pAux->pSiguiente;
   }
   printf("\n");
