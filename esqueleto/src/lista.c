@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <lista.h>
+#include <string.h> 
+#include <stdlib.h>
 
 // Crea una lista con un nodo.
 void crear(TLista *pLista, char *valor)
