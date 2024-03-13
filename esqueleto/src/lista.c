@@ -30,7 +30,7 @@ void destruir(TLista *pLista)
   free(pLista);
 }
 
-// Inserta al ppio de la lista.
+// Inserta al principio de la lista.
 void insertar(TLista *pLista, char *valor)
 {
   TNodo *pAux;
