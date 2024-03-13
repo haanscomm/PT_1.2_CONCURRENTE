@@ -1,19 +1,14 @@
 #include <stdlib.h>
-#include <stdio.h> 
-#include <errno.h> 
 
 void contar(char *line, int line_number);
 
 int main(int argc, char *argv[])
 {
-
- 
-    int numeroLinea = atoi(argv[2]);
+  
+    int numero_linea = atoi(argv[2]);
     char *linea = argv[1];
 
-    contar(linea, numeroLinea);
-
-    
+    contar(linea, numero_linea);
   
   return EXIT_SUCCESS;
 }
