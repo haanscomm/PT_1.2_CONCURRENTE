@@ -7,10 +7,10 @@ void contar(char *line, int line_number);
 int main(int argc, char *argv[])
 {
   
-    int numero_linea = atoi(argv[2]);
+    int numeroLinea = atoi(argv[2]);
     char *linea = argv[1];
 
-    contar(linea, numero_linea);
+    contar(linea, numeroLinea);
   
   return EXIT_SUCCESS;
 }
