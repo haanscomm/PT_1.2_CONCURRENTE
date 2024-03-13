@@ -6,23 +6,23 @@
 void crear(TLista *pLista, char *valor)
 {
   pLista->pPrimero = malloc(sizeof(TNodo)); // memoria del tamaño de una caja (crea un pPrimero a una zona de memoria que tiene este tamaño, pPrimero apunta a ese espacio)
-  char *pValor = malloc(strlen(valor) * sizeof(char));
-  strcpy(pValor, valor);
+  char *pValor = malloc(strlen(valor) * sizeof(char)); //Creamos el puntero donde almacenaremos el valor pasado por parámetro
+  strcpy(pValor, valor); //copiamos el contenido de valor en el nuevo puntero creado
 
-  pLista->pPrimero->valor = pValor;
+  pLista->pPrimero->valor = pValor; 
   pLista->pPrimero->pSiguiente = NULL;
 }
 
 void destruir(TLista *pLista)
 {
-  TNodo *pAux1;
-  struct Nodo *pAux2;
+  TNodo *pAux1; //Creamos un nodo auxiliar para recorrer la lista
+  struct Nodo *pAux2; // creamos otro nodo para no perder la referencia
 
   for (pAux1 = pLista->pPrimero; pAux1 != NULL;)
   {
-    pAux2 = pAux1->pSiguiente;
-    free(pAux1);
-    pAux1 = pAux2;
+    pAux2 = pAux1->pSiguiente; // guardamos el siguiente número en otro nodo auxiliar
+    free(pAux1); //elimina el nodo de la memoria
+    pAux1 = pAux2; 
   }
 
   free(pLista);
