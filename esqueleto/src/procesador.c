@@ -1,8 +1,9 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
-/*
   // Comprobar que argc vale 3
     if (argc != 3)
   {
@@ -13,12 +14,12 @@ int main(int argc, char *argv[])
   return EXIT_SUCCESS;
 
   // Llamar a una función que me diga en que líneas existe el patron
-  procesar_linea("Aqui los args[]");*/
+  procesar_linea(argv[1], argv[2]);
 
   return EXIT_SUCCESS;
 }
 
-/*void procesar_linea(char *fichero, char *patron)
+void procesar_linea(char *fichero, char *patron)
 {
 
     // Declaramos numlinea
@@ -36,6 +37,6 @@ int main(int argc, char *argv[])
 
     // Cerrar el fichero
 
-}*/
+}
 
 
