@@ -10,13 +10,7 @@ int main(int argc, char *argv[])
     exit(EXIT_FAILURE);
   }
   
-    int numero_linea = atoi(argv[2]);
-    char *linea = argv[1];
-
-    contar(linea, numero_linea);
-  
   return EXIT_SUCCESS;
-}
 
   // Llamar a una función que me diga en que líneas existe el patron
   procesar_linea("Aqui los args[]");*/
@@ -37,7 +31,7 @@ int main(int argc, char *argv[])
 
 
     // Dentro del bucle, con strstr buscar el patron dentro de la linea
-    // Si existe
+    // Si existe, tenemos que imprimir esto:
     printf("[PROCESADOR %d] Patron '%s' encontrado en linea %d\n",getpid(),patron,numLinea);
 
     // Cerrar el fichero
