@@ -6,6 +6,11 @@ void contar(char *line, int line_number);
 
 int main(int argc, char *argv[])
 {
+  if (argc != 3)
+  {
+    fprintf(stderr, "Uso: %s linea numero_linea\n", argv[0]);
+    exit(EXIT_FAILURE);
+  }
   
     int numero_linea = atoi(argv[2]);
     char *linea = argv[1];

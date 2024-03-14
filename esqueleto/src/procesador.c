@@ -2,16 +2,16 @@
 
 int main(int argc, char *argv[])
 {
-
+/*
   // Comprobar que argc vale 3
 
   // Llamar a una función que me diga en que líneas existe el patron
-  procesar_linea("Aqui los args[]");
+  procesar_linea("Aqui los args[]");*/
 
   return EXIT_SUCCESS;
 }
 
-void procesar_linea(char *fichero, char *patron)
+/*void procesar_linea(char *fichero, char *patron)
 {
 
     // Declaramos numlinea
@@ -29,6 +29,6 @@ void procesar_linea(char *fichero, char *patron)
 
     // Cerrar el fichero
 
-}
+}*/
 
 
