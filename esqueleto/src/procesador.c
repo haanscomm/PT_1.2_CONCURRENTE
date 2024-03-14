@@ -1,22 +1,19 @@
+
 #include <stdlib.h>
+#include <stdio.h> 
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
-/*
+
   // Comprobar que argc vale 3
     if (argc != 3)
   {
     fprintf(stderr, "Uso: %s linea numero_linea\n", argv[0]);
     exit(EXIT_FAILURE);
   }
-  
-    int numero_linea = atoi(argv[2]);
-    char *linea = argv[1];
 
-    contar(linea, numero_linea);
-  
-  return EXIT_SUCCESS;
-}
+
 
   // Llamar a una función que me diga en que líneas existe el patron
   procesar_linea("Aqui los args[]");*/
