@@ -198,7 +198,7 @@ char *getElementoN(TLista *pLista, int index)
 
   // Creamos un nodo auxiliar que recorre la lista
   TNodo *pAux;
-  int contador = 0;
+  int contador = 1;
 
   pAux = pLista->pPrimero;
   if (index < 0)
