@@ -32,16 +32,17 @@ void procesar_linea(char *fichero, char *patron)
     FILE *fp;
     char linea[PATH_MAX];
 
+    // Imprimir un mensaje de error si no se puede abrir el fichero
     if ((fp = fopen(fichero, "r")) == NULL)
   {
     fprintf(stderr, "Error al abrir el fichero %s\n", fichero);
     exit(EXIT_FAILURE);
   }
 
-    // Hacer un bucle que vaya leyendo linea a linea 
+  // Hacer un bucle que vaya leyendo linea a linea 
+  //Busca la palabra en la linea
   while (fgets(linea, sizeof(linea), fp) != NULL)
   {
-    //Busca la palabra en la linea
     // Dentro del bucle, con strstr buscar el patron dentro de la linea
     if (strstr(linea, patron) != NULL)
     {
@@ -49,6 +50,7 @@ void procesar_linea(char *fichero, char *patron)
     printf("[PROCESADOR %d] Patron '%s' encontrado en linea %d\n",getpid(),patron,numLinea);
       
     }
+    //Sumamos el número de línea
     numLinea++;
      
   }
