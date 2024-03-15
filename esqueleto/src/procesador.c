@@ -45,7 +45,7 @@ void procesar_linea(char *fichero, char *patron)
     // Dentro del bucle, con strstr buscar el patron dentro de la linea
     if (strstr(linea, patron) != NULL)
     {
-    // Si existe, tenemos que imprimir esto:
+    // Si existe:
     printf("[PROCESADOR %d] Patron '%s' encontrado en linea %d\n",getpid(),patron,numLinea);
       
     }
