@@ -52,8 +52,6 @@ void procesar_linea(char *fichero, char *patron)
     numLinea++;
      
   }
-    
-
     // Cerrar el fichero
     fclose(fp);
 
